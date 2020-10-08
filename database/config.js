@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const usuario = require('../models/usuario');
 
 const dbConnection = async() => {
 
@@ -14,6 +15,10 @@ const dbConnection = async() => {
         console.log(error);
         throw new Error('Error al iniciar la BD ver logs');
     }
+
+
+
+
 
 
 }
