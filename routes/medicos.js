@@ -31,10 +31,16 @@ router.post('/', [
 
 ], crearMedico);
 
-router.put('/:id', [],
+router.put('/:id', [
+    validarJWT,
+    check('nombre', 'El nombre del médico es obligatorio').not().isEmpty(),
+    check('medico', 'El médico id debe ser uno válido').isMongoId(),
+    validarCampos
+],
     actualizarMedico);
 
 router.delete('/:id',
+    validarJWT,
     borrarMedico);
 
 
