@@ -20,6 +20,9 @@ dbConnection();
 //BQzoVX2UGxagH5Nn
 //mean_user
 
+//Directorio público
+app.use(express.static('public'));
+
 app.use('/api/usuarios', require('./routes/usuarios'));
 app.use('/api/hospitales', require('./routes/hospitales'));
 app.use('/api/medicos', require('./routes/medicos'));
